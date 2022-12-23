@@ -1,0 +1,78 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+About | Portfolio
+{% endblock title %}
+
+{% block content %}
+
+{% if abouts %}
+{% for about in abouts %}
+
+	<section class="colorlib-about" data-section="contact">
+		<div class="colorlib-narrow-content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-12">
+							<div class="about-desc">
+								<span class="heading-meta">About Me</span>
+								<h2 class="colorlib-heading">Who Am I?</h2>
+								<p><strong>Hi I'm {{ about.first_name }} {{ about.last_name }}</strong> {{ about.biography }}</p>
+								<p>{{ about.biography_contd }}</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+					{% endif %}
+
+					{% if services %}
+					{% for service in services %}
+					{% if service.service_name == 'Graphic Design' %}
+					<div class="row">
+						<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
+							<div class="services color-2">
+								<span class="icon2"><i class="icon-bulb"></i></span>
+								<h3>{{ service.service_name }}</h3>
+							</div>
+						</div>
+					{% elif service.service_name == 'Web Dev' %}
+					<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+						<div class="services color-2">
+							<span class="icon2"><i class="icon-globe-outline"></i></span>
+							<h3>{{ service.service_name }}</h3>
+						</div>
+					</div>
+					{% elif service.service_name == 'Data Science' %}
+				<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
+						<div class="services color-3">
+							<span class="icon2"><i class="icon-data"></i></span>
+							<h3>{{ service.service_name }}</h3>
+						</div>
+					</div>
+					{% elif service.service_name == 'Full Stack' %}
+					<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
+						<div class="services color-4">
+							<span class="icon2"><i class="icon-phone3"></i></span>
+							<h3>{{ service.service_name }}</h3>
+						</div>
+					</div>
+					{% else %}
+					<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
+						<div class="services color-4">
+							<span class="icon2"><i class="icon-phone3"></i></span>
+							<h3>{{ service.service_name }}</h3>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+					{% endif %}
+					
+					{% include 'partials/_hire-me.html' %}
+				</div>
+			</div>
+		</div>
+	</section>
+			
+
+{% endblock content %}
