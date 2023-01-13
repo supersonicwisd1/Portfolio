@@ -25,26 +25,3 @@ class About(models.Model):
   
     class Meta:
         ordering = ['-id']
-
-
-
-# class Social(models.Model):
-#     phone = models.IntegerField()
-#     github_web = models.URLField()
-#     facebook_web = models.URLField()
-#     twitter_web = models.URLField()
-#     linkedin_web = models.URLField()
-#     website = models.URLField()
-
-# class Projects(models.Models):
-#     project_name = models.CharField(max_length=100)
-#     project_description =  models.CharField(max_length=400)
-
-#     lang_used = models.CharField(max_length=25)
-#     lang_used1 = models.CharField(max_length=25, blank=True)
-#     lang_used2 = models.CharField(max_langth=25, blank=True)
-#     framework = models.CharField(max_langth=25, blank=True)
-#     framework1 = models.CharField(max_langth=25, blank=True)
-#     framework2 = models.CharField(max_langth=25, blank=True)
-
-#     image = models.ImageField(blank=True)

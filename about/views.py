@@ -18,8 +18,8 @@ class ContactPageView(ListView):
     model = About
     context_object_name = 'contacts'
 
-def contact(request):
-    form = ContactForm()
+# def contact(request):
+# form = ContactForm()
 
 
 # def home(request):
